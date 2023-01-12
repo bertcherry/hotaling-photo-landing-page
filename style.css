@@ -190,9 +190,16 @@ blockquote span {
     flex: 1 1 400px;
 }
 
-.action-box button {
+.btn-container {
     flex: 0;
-    margin: 30px 30px 0 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-box--btn {
+    display: flex;
 }
 
 .action-header {
