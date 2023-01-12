@@ -67,7 +67,7 @@ html, body {
 
 .info {
     flex: 1;
-    padding: 80px 20px;
+    padding: 20px 20px 40px;
 }
 
 .info-header {
@@ -140,18 +140,18 @@ ul {
 
 blockquote {
     margin: 0;
-    font-size: 36px;
+    font-size: 30px;
     color: #1f2937;
     font-style: italic;
     font-weight: 300;
     max-width: 800px;
-    padding: 20px 100px;
+    padding: 40px 200px;
 }
 
 blockquote span {
     font-size: 24px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     display: block;
     text-align: right;
 }
@@ -167,7 +167,7 @@ blockquote span {
     color: #f9faf8;
     border-radius: 8px;
     padding: 30px 100px;
-    margin: 30px;
+    margin: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
