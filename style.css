@@ -50,16 +50,19 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 100px;
 }
 
 .hero-header {
     color: #f9faf8;
     font-size: 48px;
     font-weight: 900;
+    margin-bottom: 8px;
 }
 
 .hero-subtext {
     font-weight: 300;
+    margin-bottom: 12px;
 }
 
 .info {
