@@ -50,7 +50,18 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px 10px;
+}
+
+.img-container {
+    flex-shrink: 0 1 600px;
+    max-width: 600px;
+}
+
+.hero-image {
+    max-width: 100%;
 }
 
 .hero-header {
