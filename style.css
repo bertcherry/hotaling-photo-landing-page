@@ -6,7 +6,11 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
+}
 
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 .page-section--dark {
@@ -56,7 +60,7 @@ html, body {
 }
 
 .img-container {
-    flex-shrink: 0 1 600px;
+    flex: 0 1 600px;
     max-width: 600px;
 }
 
@@ -90,12 +94,15 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+}
+
+.info-card {
+    flex: 0 1 400px;
+    margin: 20px;
 }
 
 .info-image {
-    max-width: 400px;
-    margin: 10px;
+    max-width: 100%;
     border-radius: 8px;
     border: 8px solid #3883F6;
 }
@@ -166,6 +173,7 @@ blockquote span {
     font-weight: 600;
     display: block;
     text-align: right;
+    margin-top: 8px;
 }
 
 .action {
