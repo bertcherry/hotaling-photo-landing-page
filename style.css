@@ -34,6 +34,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    gap: 10px;
 }
 
 .nav-links {
@@ -186,12 +187,13 @@ blockquote span {
     background-color: #3883F6;
     color: #f9faf8;
     border-radius: 8px;
-    padding: 20px 80px;
+    padding: 30px;
     margin: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 .action-text {
@@ -200,7 +202,7 @@ blockquote span {
 
 .btn-container {
     flex: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,6 +216,7 @@ blockquote span {
     font-size: 20px;
     margin-bottom: 4px;
     color: #f9faf8;
+    font-weight: 600;
 }
 
 .footer {
