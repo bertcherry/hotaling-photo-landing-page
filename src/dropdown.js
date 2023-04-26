@@ -11,12 +11,12 @@ const activateDropdowns = () => {
 
 function showDropdown(e) {
     const element = e.currentTarget.querySelector(':nth-child(2)');
-    element.style.display = 'flex';
+    element.classList.add('visible');
 }
 
 function hideDropdown(e) {
     const element = e.currentTarget.querySelector(':nth-child(2)');
-    element.style.display = 'none';
+    element.classList.remove('visible');
 }
 
 export { activateDropdowns };
