@@ -45,13 +45,20 @@ html, body {
 }
 
 .dropdown {
-    display: none;
     /* Settings when display is changed on hover */
+    display: flex;
     flex-direction: column;
     position: absolute;
     gap: .5ch;
     padding: .5ch;
     border: solid 1px #e5e7eb;
+    transition: opacity 300ms ease-in-out;
+    opacity: 0;
+}
+
+.dropdown.visible {
+    visibility: visible;
+    opacity: 100%;
 }
 
 .logo {
