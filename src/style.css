@@ -88,6 +88,17 @@ html, body {
     flex-wrap: nowrap;
 }
 
+.nav-dots {
+    transform: translateY(-25px);
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+
+.nav-dots > img {
+    width: 3%;
+}
+
 .hero-image {
     max-width: 100%;
 }
