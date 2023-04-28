@@ -1,5 +1,4 @@
 import circleOutline from './circle-outline.svg';
-import circleFilled from './circle.svg';
 
 const generateSlider = (sliderId) => {
     const sliderWidth = () => {
@@ -29,8 +28,11 @@ const generateSlider = (sliderId) => {
     }
 
     const dotNav = (e) => {
-        //change so only active dot's content is replaced with filled circle
-        e.target.src = circleFilled;
+        const navDots = [ ...e.target.parentElement.children];
+        navDots.forEach(navDot => {
+            navDot.classList.remove('selected');
+        });
+        e.target.classList.add('selected');
         const position = e.target.id.slice(2) * 100;
         const sliderImages = document.getElementById(sliderId);
         sliderImages.style.transform = `translateX(-${position}%)`;

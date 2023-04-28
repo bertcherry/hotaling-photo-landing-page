@@ -99,6 +99,10 @@ html, body {
     width: 3%;
 }
 
+.nav-dots > img.selected {
+    content: url('./circle.svg');
+}
+
 .hero-image {
     max-width: 100%;
 }
