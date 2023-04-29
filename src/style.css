@@ -81,6 +81,7 @@ html, body {
     flex: 0 1 600px;
     max-width: 1024px;
     overflow: hidden;
+    position: relative;
 }
 
 .slider-images {
@@ -89,6 +90,7 @@ html, body {
     transition: transform .5s ease-in-out;
 }
 
+/* Need to get this to float on top properly without taking up space in the DOM */
 .nav-dots {
     transform: translateY(-25px);
     display: flex;
@@ -102,6 +104,19 @@ html, body {
 
 .nav-dots > img.selected {
     content: url('./circle.svg');
+}
+
+.slider-arrows {  
+    position: absolute;
+    transform: translateY(-375%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.slider-arrows > div {
+    width: 10%;
 }
 
 .hero-image {
