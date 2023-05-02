@@ -99,12 +99,7 @@ const generateSlider = (sliderId) => {
         totalImages: sliderWidth(),
         currentSlideId: sliderId.slice(6) + '-' + 0,
     }
-
-    const arrowNav = {
-        //arrowId: currentTarget.id,
-        //sliderId: currentTarget.parentElement.parentElement.firstChild.id,
-    }
-
+    
     return { imageDots, navArrows, currentDot }
 }
 
