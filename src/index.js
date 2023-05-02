@@ -1,7 +1,6 @@
 import './style.css';
 import { activateDropdowns } from './dropdown';
-import { slider1 } from './slider';
+import { generateSliders } from './slider';
 
 activateDropdowns();
-slider1.imageDots();
-slider1.navArrows();
+generateSliders();
