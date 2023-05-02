@@ -90,8 +90,9 @@ html, body {
     transition: transform .5s ease-in-out;
 }
 
-/* Need to get this to float on top properly without taking up space in the DOM */
 .nav-dots {
+    position: absolute;
+    width: 100%;
     transform: translateY(-25px);
     display: flex;
     justify-content: center;
