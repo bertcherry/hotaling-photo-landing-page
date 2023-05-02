@@ -75,12 +75,21 @@ const generateSlider = (sliderId) => {
     }
 
     const nextSlide = () => {
-
-        //if the current slide is the last in the slide set by sliderWidth, go to the first one (id 0)
+        if (slider.currentSlideId.slice(2) == (slider.totalImages - 1)) {
+            slider.currentSlideId = sliderId.slice(6) + '-' + 0;
+        } else {
+            slider.currentSlideId = sliderId.slice(6) + '-' + (parseInt(slider.currentSlideId.slice(2)) + 1);
+        }
+        currentDot();
     }
 
     const lastSlide = () => {
-        //if the current slide is the first in the slide set (id 0), go to the last one
+        if (slider.currentSlideId.slice(2) == 0) {
+            slider.currentSlideId = sliderId.slice(6) + '-' + (slider.totalImages - 1);
+        } else {
+            slider.currentSlideId = sliderId.slice(6) + '-' + (parseInt(slider.currentSlideId.slice(2)) - 1);
+        }
+        currentDot();
     }
 
     const slider = {
