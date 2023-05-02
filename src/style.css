@@ -99,11 +99,11 @@ html, body {
     gap: 2%;
 }
 
-.nav-dots > img {
+.nav-dots > a {
     width: 3%;
 }
 
-.nav-dots > img.selected {
+.nav-dots > a.selected > img {
     content: url('./circle.svg');
 }
 

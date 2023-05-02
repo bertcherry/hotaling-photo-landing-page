@@ -20,22 +20,24 @@ const generateSlider = (sliderId) => {
         const sliderContainer = document.getElementById(sliderId).parentElement;
         sliderContainer.appendChild(dotsContainer);
         for (let i = 0; i < sliderWidth(); i++) {
-            //put this inside a button or a element for accessibility
+            const dotLink = document.createElement('a');
+            dotLink.setAttribute('aria-label', `move slider to image ${i}`);
+            //put this inside a button or 'a' element for accessibility
             const navDot = document.createElement('img');
             navDot.src = circleOutline;
             navDot.id = sliderId.slice(6) + '-' + i;
-            navDot.setAttribute('aria-label', `slider image ${i}`);
-            dotsContainer.appendChild(navDot);
-            navDot.addEventListener('click', dotNav);
+            dotLink.appendChild(navDot);
+            dotsContainer.appendChild(dotLink);
+            dotLink.addEventListener('click', dotNav);
         }
     }
 
     const dotNav = (e) => {
-        const navDots = [ ...e.target.parentElement.children];
+        const navDots = [ ...e.currentTarget.parentElement.children];
         navDots.forEach(navDot => {
             navDot.classList.remove('selected');
         });
-        e.target.classList.add('selected');
+        e.currentTarget.classList.add('selected');
         const position = e.target.id.slice(2) * 100;
         const sliderImages = document.getElementById(sliderId);
         sliderImages.style.transform = `translateX(-${position}%)`;
