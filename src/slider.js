@@ -32,6 +32,7 @@ const generateSlider = (sliderId) => {
 
     const dotNav = (e) => {
         slider.currentSlideId = e.currentTarget.id;
+        timeout.set();
         currentDot();
     }
 
@@ -80,6 +81,7 @@ const generateSlider = (sliderId) => {
         } else {
             slider.currentSlideId = sliderId.slice(6) + '-' + (parseInt(slider.currentSlideId.slice(2)) + 1);
         }
+        timeout.set();
         currentDot();
     }
 
@@ -89,6 +91,7 @@ const generateSlider = (sliderId) => {
         } else {
             slider.currentSlideId = sliderId.slice(6) + '-' + (parseInt(slider.currentSlideId.slice(2)) - 1);
         }
+        timeout.set();
         currentDot();
     }
 
@@ -98,18 +101,33 @@ const generateSlider = (sliderId) => {
         sliderContainer: document.getElementById(sliderId).parentElement,
         totalImages: sliderWidth(),
         currentSlideId: sliderId.slice(6) + '-' + 0,
+        timeoutId: undefined,
     }
-    
-    return { imageDots, navArrows, currentDot }
+
+    const timeout = {
+        set() {
+            if (this.timeoutId !== 'undefined') {
+                this.cancel();
+            }
+            this.timeoutId = setTimeout(nextSlide, 5000);
+        },
+
+        cancel() {
+            clearTimeout(this.timeoutId);
+        },
+    }
+
+    return { imageDots, navArrows, currentDot, timeout }
 }
 
 const generateSliders = () => {
     const sliders = document.querySelectorAll('.slider-images');
-    sliders.forEach(slider => {
-        const sliderCreate = generateSlider(slider.id);
+    sliders.forEach(item => {
+        const sliderCreate = generateSlider(item.id);
         sliderCreate.imageDots();
         sliderCreate.navArrows();
         sliderCreate.currentDot();
+        sliderCreate.timeout.set();
     });
 }
 
